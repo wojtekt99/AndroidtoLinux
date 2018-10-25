@@ -1,0 +1,7 @@
+You may need to repack with 
+UNPACK
+zcat initrd.cpio.gz | cpio -idmv
+PACK
+find . | cpio --create --format='newc'  | gzip -9 > ../initrd.cpio.gz
+
+And if armv7 static /bin/busybox not work replace it with your version
